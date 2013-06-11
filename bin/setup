@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# Copy over the example files
+cp -i .env.example .env
+
+# Setup pow
+if [ -d "$HOME/.pow/" ]; then
+  ln -s $PWD ~/.pow
+fi
+
+# Install some packages
+npm install
+
+# Install supervisor
+echo "Now going to install Supervisor globally for development"
+sudo npm install -g supervisor

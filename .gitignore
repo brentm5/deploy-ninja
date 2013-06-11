@@ -1,0 +1,5 @@
+# Some Config files
+.env
+
+# None neccessary folders
+node_modules/

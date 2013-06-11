@@ -1,0 +1,5 @@
+if [ "$NODE_ENV" == "development" ]; then
+  supervisor -q ./lib/start.js
+else
+  node ./lib/start.js
+fi
