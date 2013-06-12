@@ -11,5 +11,6 @@ rest api.
 
 ### Technology Requirements
 * PostgreSQL
-* Node.js
+* Ruby 2.0.0
+* sinatra
 
