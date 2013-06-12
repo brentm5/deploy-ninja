@@ -3,3 +3,5 @@
 
 # None neccessary folders
 node_modules/
+bin/stubs/
+tmp/
