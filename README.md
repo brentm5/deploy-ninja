@@ -12,5 +12,11 @@ rest api.
 ### Technology Requirements
 * PostgreSQL
 * Ruby 2.0.0
-* sinatra
+* Sinatra
 
+```
+  POST: /deployment
+  parameters
+    - data: { "branch": "git-branch", "commit": "lastcommitsha"}
+      (optional params: errors, success)
+```
