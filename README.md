@@ -19,4 +19,12 @@ rest api.
   parameters
     - data: { "branch": "git-branch", "commit": "lastcommitsha"}
       (optional params: errors, success)
+  returns:
+    - deployment object
+```
+
+```
+  GET: /deployment/last/:branch
+  returns:
+    - deployment object
 ```
