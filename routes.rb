@@ -3,7 +3,7 @@ get '/' do
   erb :root
 end
 
-post '/deployment' do
+post '/deployment/new' do
   content_type :json
   deployment = Deployment.new(deploy_params)
   if deployment.save
@@ -30,7 +30,7 @@ get '/deployment/last/:branch' do
 end
 
 def deploy_params
-  data = JSON.parse(params['data'])
+  data = JSON.parse(request.body.read)
 
   if data
     { branch: data['branch'],
