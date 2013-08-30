@@ -16,9 +16,9 @@ rest api.
 
 ```
   POST: /deployment
-  parameters
-    - data: { "branch": "git-branch", "commit": "lastcommitsha"}
-      (optional params: errors, success)
+  payload (json)
+    - { "branch": "git-branch", "commit": "lastcommitsha"}
+      (optional values: errors, success)
   returns:
     - deployment object
 ```
