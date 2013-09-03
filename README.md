@@ -15,16 +15,22 @@ rest api.
 * Sinatra
 
 ```
-  POST: /deployment
-  payload (json)
-    - { "branch": "git-branch", "commit": "lastcommitsha"}
-      (optional values: errors, success)
+  POST: /deployments
+  parameters
+    - {"tag": "silo-tag", "branch": "git-branch", "commit": "lastcommitsha"}
+      (optional params: errors, success)
   returns:
-    - deployment object
+    - created deployment object
 ```
 
 ```
-  GET: /deployment/last/:branch
+  GET: /deployment/:tag/last
   returns:
-    - deployment object
+    - deployment object for tag
+```
+
+```
+  POST: /deployments/:tag
+  returns:
+    - deployment objects for tag
 ```

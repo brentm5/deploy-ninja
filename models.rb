@@ -1,9 +1,9 @@
 class Deployment < ActiveRecord::Base
-  validates :branch, :commit_sha, presence: true
+  validates :tag, :branch, :commit_sha, presence: true
 
-  scope :deploys, lambda { |branch_name| where(branch: branch_name) }
+  scope :deploys, lambda { |tag_name| where(tag: tag_name) }
 
-  def self.last_deploy(branch_name)
-    deploys(branch_name).last
+  def self.last_deploy(tag_name)
+    deploys(tag_name).last
   end
 end
