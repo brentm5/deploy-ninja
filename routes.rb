@@ -13,7 +13,7 @@ post '/deployments/new' do
   end
 
   status 400
-  body({ status: 'ERROR', errors: deployment.errors }.to_json)
+  body(results_error(deployment.errors))
 end
 
 get '/deployments/:tag/last' do
@@ -44,18 +44,27 @@ get '/deployments/:tag' do
 end
 
 def no_results_error
-  { status: 'ERROR', errors: 'No Results' }.to_json
+  results_error('No Results')
+end
+
+def results_error(error_message)
+  { status: 'ERROR', errors: error_message }.to_json
 end
 
 def deploy_params
-  data = JSON.parse(request.body.read)
+  begin
+    data = JSON.parse(request.body.read)
 
-  if data
-    { tag: data['tag'],
-      branch: data['branch'],
-      commit_sha: data['commit'],
-      successful: data['success'],
-      error_summary: data['errors']
-    }
+    if data
+      { tag: data['tag'],
+        branch: data['branch'],
+        commit_sha: data['commit'],
+        successful: data['success'],
+        error_summary: data['errors']
+      }
+    end
+  rescue
+    nil
   end
 end
+
