@@ -7,4 +7,5 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'puma'
 gem 'dotenv'
+gem 'airbrake', '3.1.8'
 
