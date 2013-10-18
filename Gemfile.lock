@@ -12,10 +12,15 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    airbrake (3.1.8)
+      activesupport
+      builder
+      json
     arel (3.0.2)
     builder (3.0.4)
     dotenv (0.7.0)
     i18n (0.6.1)
+    json (1.8.0)
     multi_json (1.7.6)
     pg (0.16.0)
     puma (2.0.1)
@@ -39,6 +44,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  airbrake (= 3.1.8)
   dotenv
   pg (= 0.16.0)
   puma

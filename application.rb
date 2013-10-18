@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'dotenv'
+require 'airbrake'
 require 'sinatra/activerecord'
 require File.join(File.dirname(__FILE__), 'enviroment')
 
@@ -20,7 +21,14 @@ configure do
     database: db.path[1..-1],
     encoding: 'utf8'
   )
-
+  Airbrake.configure do |config|
+    config.api_key = ENV['AIRBRAKE_API_KEY']
+    config.host    = 'errbit.bmontague.com'
+    config.port    = 80
+    config.secure  = config.port == 443
+  end
+  use Airbrake::Rack
+  enable :raise_errors
 end
 
 error do
