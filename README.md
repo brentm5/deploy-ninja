@@ -17,7 +17,7 @@ rest api.
 ```
   POST: /deployments
   parameters
-    - {"tag": "silo-tag", "branch": "git-branch", "commit": "lastcommitsha"}
+    - {"tag": "silo-tag", "branch": "git-branch", "commit_sha": "lastcommitsha"}
       (optional params: errors, success)
   returns:
     - created deployment object

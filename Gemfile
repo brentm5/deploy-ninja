@@ -13,4 +13,5 @@ gem 'json', '1.8.1' #This is bullshit
 group :test do
     gem 'rspec'
     gem 'capybara'
+    gem 'factory_girl'
 end

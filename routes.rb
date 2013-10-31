@@ -58,7 +58,7 @@ def deploy_params
     if data
       { tag: data['tag'],
         branch: data['branch'],
-        commit_sha: data['commit'],
+        commit_sha: data['commit_sha'],
         successful: data['success'],
         error_summary: data['errors']
       }

@@ -2,6 +2,7 @@ require File.join(File.dirname(__FILE__), '..', 'application.rb')
 
 require 'sinatra'
 require 'rack/test'
+require 'factory_girl'
 
 # setup test environment
 set :environment, :test
@@ -15,4 +16,7 @@ end
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include FactoryGirl::Syntax::Methods
 end
+
+FactoryGirl.find_definitions
