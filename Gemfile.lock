@@ -24,6 +24,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.4)
     dotenv (0.7.0)
     factory_girl (4.2.0)
@@ -71,6 +72,7 @@ DEPENDENCIES
   activerecord
   airbrake (= 3.1.8)
   capybara
+  database_cleaner
   dotenv
   factory_girl
   json (= 1.8.1)
