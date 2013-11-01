@@ -18,7 +18,7 @@ configure do
     host: db.host,
     username: db.user,
     password: db.password,
-    database: db.path[1..-1] + '_' + ENV['RACK_ENV'],
+    database: db.path[1..-1],
     encoding: 'utf8'
   )
   Airbrake.configure do |config|
