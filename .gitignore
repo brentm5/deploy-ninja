@@ -1,7 +1,11 @@
-# Some Config files
+/.bundle
 .env
 
-# None neccessary folders
-node_modules/
-bin/stubs/
-tmp/
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/bin/stubs/
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
