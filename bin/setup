@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Copy over the .env.example files
+# Copy over the .env.example file
 cp -i .env.example .env
 
 # Setup pow
