@@ -1,6 +1,6 @@
 class Api::DeploymentsController < ApplicationController
   def index
-    deployments = Deployment.by_tag(params[:project_id])
+    deployments = Deployment.by_project(params[:project_id])
     render json: { deployments: deployments }, status: 200
   end
 

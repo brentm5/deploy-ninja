@@ -4,7 +4,7 @@ DeployNinja::Application.routes.draw do
   namespace :api do
     resources :projects do
       resources :deployments, only: [:index]
-      resources :last_deployment, only: [:index]
+      resource :last_deployment, only: [:show]
     end
     resources :deployments, only: [:create]
   end
