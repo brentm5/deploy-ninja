@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20131103192559) do
   enable_extension "plpgsql"
 
   create_table "deployments", force: true do |t|
-    t.string   "tag"
+    t.string   "project"
     t.string   "branch"
     t.string   "commit_sha"
     t.boolean  "successful"

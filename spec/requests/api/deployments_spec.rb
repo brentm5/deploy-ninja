@@ -19,20 +19,20 @@ describe 'Deployments API' do
     expect(response_json['errors']).to_not eq nil
   end
 
-  it 'can return all deployments for a tag' do
-    create_list(:deployment, 2, tag: 'hello')
+  it 'can return all deployments for a project' do
+    create_list(:deployment, 2, project: 'hello')
 
-    get '/api/deployments/hello'
+    get '/api/projects/hello/deployments'
 
     expect(response).to be_success
     expect(response_json['deployments'].count).to eq(2)
   end
 
-  it 'can return the last deployment for a tag' do
-    create_list(:deployment, 2, tag: 'hello')
-    deployment = create(:deployment, tag: 'hello', commit_sha: 'bubbles')
+  it 'can return the last deployment for a project' do
+    create_list(:deployment, 2, project: 'hello')
+    deployment = create(:deployment, project: 'hello', commit_sha: 'bubbles')
 
-    get '/api/deployments/hello/last'
+    get '/api/projects/hello/last_deployment'
 
     expect(response).to be_success
     expect(response_json['deployment']['commit_sha']).to eq(deployment.commit_sha)

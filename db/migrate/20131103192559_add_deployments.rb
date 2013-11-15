@@ -1,7 +1,7 @@
 class AddDeployments < ActiveRecord::Migration
   def change
     create_table :deployments do |t|
-      t.string :tag
+      t.string :project
       t.string :branch
       t.string :commit_sha
       t.boolean :successful

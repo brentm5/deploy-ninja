@@ -1,5 +1,5 @@
 class Deployment < ActiveRecord::Base
-  validates :tag, :branch, :commit_sha, presence: true
+  validates :project, :branch, :commit_sha, presence: true
 
-  scope :by_tag, lambda { |tag_name| where(tag: tag_name) }
+  scope :by_tag, lambda { |project_name| where(project: project_name) }
 end
