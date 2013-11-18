@@ -1,0 +1,33 @@
+#%RAML 0.8
+---
+title: Deploy Ninja API
+baseUri: http://deploy.bmontague.com/
+version: v1
+mediaType: application/json
+/projects/{project_name}:
+  /deployments:
+    get:
+      description: Gets all the deployments for a project from newest to oldest
+      responses:
+        200:
+          body:
+            application/json:
+  /last_deployment:
+    get:
+      description: Gets the last deployment for a project
+      responses:
+        200:
+          body:
+            application/json:
+/deployments:
+  post:
+    description: Record a deployment for a project
+    responses:
+      200:
+        description: Successfully added a deployment
+        body:
+          application/json:
+      400:
+        description: Failed to add a deployment, verify the reason with the errors that are returned
+        body:
+          application/json:
