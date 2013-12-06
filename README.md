@@ -13,10 +13,14 @@ rest api.
 * Ruby 2.0.0
 * RoR
 
+
+## Api Documentation:
+A short overview is below but you can also access
+/api/spec/v1.raml
 ```
   POST: api/deployment
   parameters
-    - {"tag": "silo-tag", "branch": "git-branch", "commit": "lastcommitsha"}
+    - {"project": "project-name", "branch": "git-branch", "commit_sha": "lastcommitsha"}
       (optional params: errors, success)
   returns:
     - created deployment object
