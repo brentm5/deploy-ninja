@@ -4,7 +4,7 @@ describe 'Deployments API' do
   it 'can create a deployment' do
     deployment = attributes_for(:deployment, branch: 'helloworld')
 
-    post '/api/deployments', deployment.to_json
+    post '/api/deployments', deployment.to_json, {"Content-Type" =>  "application/json" }
 
     expect(response).to be_success
     expect(response_json['deployment']['branch']).to eq deployment[:branch]

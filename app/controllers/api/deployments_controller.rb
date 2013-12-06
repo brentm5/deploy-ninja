@@ -5,7 +5,7 @@ class Api::DeploymentsController < ApplicationController
   end
 
   def create
-    deployment = Deployment.new(request_json)
+    deployment = Deployment.new(deployment_from_request)
     if deployment.save
       render json: { deployment: deployment }, status: 200
     else
@@ -15,7 +15,7 @@ class Api::DeploymentsController < ApplicationController
 
   private
 
-  def request_json
-    @request_json ||= JSON.parse(request.body.read)
+  def deployment_from_request
+    request.params[:deployment]
   end
 end
