@@ -27,12 +27,12 @@ A short overview is below but you can also access
 ```
 
 ```
-  GET: api/deployment/:tag/last
+  GET: api/projects/:project_name/deployments
   returns:
-    - deployment object for tag
+    - deployment objects for tag
 ```
 
 ```
-  GET: api/deployments/:tag
+  GET: api/projects/:project_name/last_deployment
   returns:
-    - deployment objects for tag
+    - last deployment object for tag
